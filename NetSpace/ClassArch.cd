@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NetSpace.Interfaces.NetworkSpeed">
+    <Position X="1" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Interfaces\INetworkService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSpace.Models.ApplicationContext" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAQAAAAAAAAAAAAEAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NetSpace.Models.DBTable" Collapsed="true">
+    <Position X="1" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAAACAAAAAAAAAAAAACAEAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Models\DBTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSpace.Models.NetworkMonitor" BaseTypeListCollapsed="true">
+    <Position X="4" Y="11.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAEgIAgqBAAAQAECAAABAAAAEgABIAgAIgIACAACoAA=</HashCode>
+      <FileName>Models\NetworkMonitor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_rawData" />
+      <Field Name="_interface" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NetSpace.Models.TimeMonitor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TimeMonitor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NetSpace.ViewModels.AppTabs.DnsViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAYAAAAAAERAAoAAAAgAAgFAACAAIAAAAABQFAAA=</HashCode>
+      <FileName>ViewModels\AppTabs\DnsViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dbService" />
+      <Field Name="_settings" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NetSpace.ViewModels.AppTabs.InterfacesViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAIAAAAAAAAAwoAAAAAAAgAAAAAAAQAAAAAAAQAA=</HashCode>
+      <FileName>ViewModels\AppTabs\InterfacesViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_settings" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NetSpace.ViewModels.AppTabs.IPViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAABAAAERAAoAAAAgAAgAAACAAAAAAAABAEAAA=</HashCode>
+      <FileName>ViewModels\AppTabs\IPViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_settings" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NetSpace.ViewModels.AppTabs.OtherViewModel" Collapsed="true">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAoggAAAAAACAIAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\AppTabs\OtherViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dbService" />
+      <Field Name="_settings" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="NetSpace.ViewModels.MainViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQBAAAIJgAAgAAIAAQCIBAgAgABEABEAABQJESAQA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_networkService" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NetSpace.ViewModels.TrayContextViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="9.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="NetSpace.ViewModels.TrayContextViewModel.SpeedTypes" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewModels\TrayContextViewModel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IEAURABEgACAAAggoIQCCIhAiQEMAgAIQhgAAACAgEI=</HashCode>
+      <FileName>ViewModels\TrayContextViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dbService" />
+      <Field Name="_networkService" />
+      <Field Name="_timeService" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NetSpace.ViewModels.TrayViewModel" Collapsed="true">
+    <Position X="1" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAABAAAAAAEAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\TrayViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSpace.App" Collapsed="true">
+    <Position X="6.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAAAAAAAAAAAAAAAgAAAAABAAAAQAABIABAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dbService" />
+      <Field Name="_networkService" />
+      <Field Name="_settings" />
+      <Field Name="_timeService" />
+      <Field Name="_tray" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Hardcodet.Wpf.TaskbarNotification.TaskbarIcon" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Hardcodet.Wpf.TaskbarNotification.TaskbarIcon.GetCustomPopupPosition" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.NetworkInformation.NetworkInterface" Collapsed="true">
+    <Position X="4" Y="10.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SQLite.SQLiteConnection" Collapsed="true">
+    <Position X="6.25" Y="10.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="SQLite.SQLiteConnection.ColumnInfo" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="NetSpace.Interfaces.IDBService">
+    <Position X="9.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAEAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDBService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NetSpace.Interfaces.INetworkService">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAgAAAAAAAACAAAAAAAAAAAAAAAAIgAAAAAAIAA=</HashCode>
+      <FileName>Interfaces\INetworkService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NetSpace.Interfaces.ISettingsService">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEgAAAiBAAAQAAAAAABAAAAEAABAAgAAAIAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ISettingsService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NetSpace.Interfaces.ITimeService">
+    <Position X="6.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITimeService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

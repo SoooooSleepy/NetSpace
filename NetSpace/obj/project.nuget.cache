@@ -1,0 +1,74 @@
+{
+  "version": 2,
+  "dgSpecHash": "w3f6gJcULWc=",
+  "success": true,
+  "projectFilePath": "D:\\NetSpace\\NetSpace\\NetSpace.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sofia\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\hardcodet.notifyicon.wpf\\2.0.1\\hardcodet.notifyicon.wpf.2.0.1.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\microsoft.data.sqlite\\10.0.3\\microsoft.data.sqlite.10.0.3.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\microsoft.data.sqlite.core\\10.0.3\\microsoft.data.sqlite.core.10.0.3.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\sqlite-net-pcl\\1.9.172\\sqlite-net-pcl.1.9.172.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.11\\sqlitepclraw.bundle_e_sqlite3.2.1.11.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.1.2\\sqlitepclraw.bundle_green.2.1.2.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\sqlitepclraw.core\\2.1.11\\sqlitepclraw.core.2.1.11.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.11\\sqlitepclraw.lib.e_sqlite3.2.1.11.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.11\\sqlitepclraw.provider.e_sqlite3.2.1.11.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\system.management\\10.0.3\\system.management.10.0.3.nupkg.sha512",
+    "C:\\Users\\sofia\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.57\\microsoft.windows.sdk.net.ref.10.0.17763.57.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "У пакета \"Newtonsoft.Json\" 9.0.1 есть известная уязвимость https://github.com/advisories/GHSA-5crp-9r3c-p9vr (уровень серьезности: высокий уровень)",
+      "projectPath": "D:\\NetSpace\\NetSpace\\NetSpace.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\NetSpace\\NetSpace\\NetSpace.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net10.0-windows10.0.17763.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "У пакета \"SQLitePCLRaw.lib.e_sqlite3\" 2.1.11 есть известная уязвимость https://github.com/advisories/GHSA-2m69-gcr7-jv3q (уровень серьезности: высокий уровень)",
+      "projectPath": "D:\\NetSpace\\NetSpace\\NetSpace.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\NetSpace\\NetSpace\\NetSpace.csproj",
+      "libraryId": "SQLitePCLRaw.lib.e_sqlite3",
+      "targetGraphs": [
+        "net10.0-windows10.0.17763.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Пакет \"LiveCharts 0.9.7\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net10.0-windows10.0.17763\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "projectPath": "D:\\NetSpace\\NetSpace\\NetSpace.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\NetSpace\\NetSpace\\NetSpace.csproj",
+      "libraryId": "LiveCharts",
+      "targetGraphs": [
+        "net10.0-windows10.0.17763.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Пакет \"LiveCharts.Wpf 0.9.7\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net10.0-windows10.0.17763\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "projectPath": "D:\\NetSpace\\NetSpace\\NetSpace.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\NetSpace\\NetSpace\\NetSpace.csproj",
+      "libraryId": "LiveCharts.Wpf",
+      "targetGraphs": [
+        "net10.0-windows10.0.17763.0"
+      ]
+    }
+  ]
+}

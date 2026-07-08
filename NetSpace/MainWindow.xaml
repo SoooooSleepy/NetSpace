@@ -1,0 +1,140 @@
+﻿<Window x:Class="NetSpace.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetSpace"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+        mc:Ignorable="d"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        ResizeMode="NoResize" 
+        Closing="Window_Closing"
+        Icon="/Resources/TrayIcon.ico"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Background="#FF2D2D30"
+        Title="NetSpace" Height="550" Width="1200" FontSize="18" FontFamily="{StaticResource Major}">
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome CaptionHeight="36"
+                        CornerRadius="12"
+                        ResizeBorderThickness="6"
+                        UseAeroCaptionButtons="False"/>
+    </shell:WindowChrome.WindowChrome>
+
+    <Border Background="#1b314c"  SnapsToDevicePixels="True">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Кастомная строка заголовка -->
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                   
+                </Grid.ColumnDefinitions>
+
+                <StackPanel  Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,0">
+                    
+                    <TextBlock TextAlignment="Right" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}"
+                     Foreground="White" VerticalAlignment="Center" FontSize="16"/>
+                </StackPanel>
+           
+
+            </Grid>
+
+            <!-- Содержимое окна -->
+            <Border Grid.Row="1" Background="#081825" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ContentPresenter Grid.Row="1" Grid.RowSpan="2" Margin="10" Content="{Binding SelectedPage}"/>
+                    <StackPanel HorizontalAlignment="Center"  Style="{StaticResource CustomToolBar}">
+                        <Button Command="{Binding DnsCommand}" Content="DNS" Style="{StaticResource ToolBarButton}"/>
+                        <Button Command="{Binding InterfacesCommand}" Content="Интерфейсы" Style="{StaticResource ToolBarButton}"/>
+                        <Button Command="{Binding IPCommand}"  Content="IP" Style="{StaticResource ToolBarButton}"/>
+                        <Button Command="{Binding OtherCommand}" Content="Прочее" Style="{StaticResource ToolBarButton}"/>
+                    </StackPanel>
+                    <Rectangle Width="1" Fill="#5e82ac" Grid.RowSpan="4" Grid.Column="1" Margin="0,20,0,20"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Пропускная способность" Style="{StaticResource TitleMainApp}"/>
+                    <lvc:CartesianChart Margin="10,0,2,0" LegendLocation="Bottom"  Height="auto" Width="auto" Background="Transparent" DisableAnimations="True" Hoverable="True"
+                    Grid.Column="3" Foreground="#b1d2f9" FontSize="10" Grid.Row="1" >
+                        <lvc:CartesianChart.DataTooltip>
+                            <lvc:DefaultTooltip Background="#1b314c" 
+                            Foreground="#b1d2f9" 
+                            BorderBrush="#3c5e82" 
+                            BorderThickness="1"
+                            SelectionMode="OnlySender"
+                            BulletSize="5" />
+                        </lvc:CartesianChart.DataTooltip>
+                        <lvc:CartesianChart.Series>
+                            <lvc:LineSeries Values="{Binding DownloadValues}" 
+                        Title="Download" 
+                        Stroke="#00B0FF" 
+
+                        Fill="#2200B0FF" 
+                        PointGeometrySize="7" 
+                        PointForeground="#00B0FF"
+                        LineSmoothness="0.5"/>
+
+                            <lvc:LineSeries Values="{Binding UploadValues}" 
+                        Title="Upload" 
+                        Stroke="#FF5252" 
+                        Fill="#22FF5252" 
+                        PointGeometrySize="7"
+                        PointForeground="#FF5252"
+                        LineSmoothness="0.5"/>
+                        </lvc:CartesianChart.Series>
+
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis ShowLabels="True"  MinValue="0"  LabelFormatter="{Binding YFormatter}" >
+                                <lvc:Axis.Separator>
+                                    <lvc:Separator StrokeThickness="0.5" Stroke="#3c5e82"/>
+                                </lvc:Axis.Separator>
+                            </lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis ShowLabels="False"/>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+                    <Border CornerRadius="15" Margin="10" Background="#1b314c" Grid.Row="3" Grid.Column="2">
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Style="{StaticResource StackAppInfo}">
+                                <TextBlock Text="Адаптер:" Style="{StaticResource MainTextApp}"/>
+                                <TextBlock Text="SSID:" Style="{StaticResource MainTextApp}"/>
+                                <TextBlock Text="Тип подключения:" Style="{StaticResource MainTextApp}"/>
+                                <TextBlock Text="IPv4-адрес:" Style="{StaticResource MainTextApp}"/>
+                                <TextBlock Text="IPv6-адрес:" Style="{StaticResource MainTextApp}"/>
+                                <TextBlock Text="Уровень сигнала:" Style="{StaticResource MainTextApp}"/>
+                            </StackPanel>
+                            <StackPanel Style="{StaticResource StackAppInfo}" Grid.Column="1">
+                                <TextBlock Text="{Binding ActiveNetworkInterface}" Style="{StaticResource MainTextApp}" ToolTip="{Binding ActiveNetworkInterface}" TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding ActiveSSID}" Style="{StaticResource MainTextApp}" ToolTip="{Binding ActiveSSID}"/>
+                                <TextBlock Text="{Binding ActiveConnectionType}" Style="{StaticResource MainTextApp}"/>
+                                <TextBlock Text="{Binding CurrentIp4}" Style="{StaticResource MainTextApp}"/>
+                                <TextBlock Text="{Binding CurrentIp6}" Style="{StaticResource MainTextApp}"/>
+                                <TextBlock Text="{Binding WifiSignal}" Style="{StaticResource MainTextApp}"/>
+                            </StackPanel>
+                        </Grid>
+                       
+                        
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

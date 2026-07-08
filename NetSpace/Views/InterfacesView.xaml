@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="NetSpace.Views.InterfacesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NetSpace.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border CornerRadius="15" Grid.ColumnSpan="2"  Background="#1b314c">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    
+                </Grid.RowDefinitions>
+                <TextBlock Text="Список интерфейсов"  Style="{DynamicResource TitleMainApp}" FontSize="20" Margin="5"/>
+                     <ListBox Grid.Row="1" Style="{DynamicResource RoundedDoubleBackgroundListBox}" SelectedItem="{Binding SelectedInterface}" ItemsSource="{Binding InteracesList}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Width="auto">
+                                    
+                                    <StackPanel Orientation="Horizontal" >
+                                        <StackPanel>
+
+                                        <TextBlock Width="300" FontWeight="ExtraBold"  TextWrapping="WrapWithOverflow" Text="{Binding _name}" Style="{DynamicResource MainTextApp}"/>
+                                        <TextBlock Width="300" FontSize="12" Opacity="0.8" TextWrapping="WrapWithOverflow" Text="{Binding _description}" Style="{DynamicResource MainTextApp}"/>
+                                        </StackPanel>
+                                        <Rectangle Width="1" Fill="#82afe5"  Margin="10,5,10,5"/>
+                                   
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding _status}" Style="{DynamicResource MainTextApp}"/>
+                                            <TextBlock Text="{Binding _type}" Style="{DynamicResource MainTextApp}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <Rectangle Height="1" 
+                                       Fill="#82afe5" 
+                                       Margin="5,2" 
+                                       HorizontalAlignment="Stretch" 
+                                       Opacity="1"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+             
+                
+            </Grid>
+        </Border>
+        <Button Content="Включить" Grid.Row="1" Grid.Column="1" Command="{Binding TurnOnCommand}" HorizontalAlignment="Center" FontSize="18"  Style="{DynamicResource ToolBarButton}" Margin="10"/>
+        <Button Content="Отключить" Grid.Row="1" HorizontalAlignment="Center" Command="{Binding TurnOffCommand}" FontSize="18"  Style="{DynamicResource ToolBarButton}" Margin="10"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="NetSpace.Views.TaskBar.TaskBarContext"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NetSpace.Views.TaskBar"
+             mc:Ignorable="d" 
+                  xmlns:vm="clr-namespace:NetSpace.ViewModels"
+               Foreground="#82afe5" Padding="10"  FontFamily="{StaticResource Major}">
+
+    <Border BorderBrush="#82afe5" BorderThickness="1" Background="#081825" CornerRadius="10" Padding="10">
+        <StackPanel Width="250">
+            <TextBlock Text="Сетевой трафик" TextAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <Separator BorderBrush="#82afe5" BorderThickness="5" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+        
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <TextBlock Text="{Binding DownloadSpeed}" Style="{DynamicResource SpeedIndication}"/>
+                    <TextBlock Text="{Binding DownloadType}" Style="{DynamicResource SpeedIndicationType}"/>
+                    <TextBlock Text="Download" Style="{DynamicResource IndicationType}"/>
+                </StackPanel>
+                <Rectangle Width="1" Fill="#5e82ac" Grid.Column="1" Margin="0,7,0,7"/>
+                <StackPanel Grid.Row="0" Grid.Column="2">
+                    <TextBlock Text="{Binding UploadSpeed}" Style="{DynamicResource SpeedIndication}"/>
+                    <TextBlock Text="{Binding UploadType}" Style="{DynamicResource SpeedIndicationType}"/>
+                    <TextBlock Text="Upload" Style="{DynamicResource IndicationType}"/>
+                </StackPanel>
+                <Separator BorderBrush="#82afe5" Grid.Row="1" BorderThickness="5" Grid.ColumnSpan="3"/>
+                <StackPanel Grid.Row="2" >
+                    <TextBlock Text="Сессия:" Style="{DynamicResource TitleTray}" />
+                    <TextBlock Text="Uploaded:" Style="{DynamicResource MainTextTray}"/>
+                    <TextBlock Text="Download:" Style="{DynamicResource MainTextTray}"/>
+                    <TextBlock Text="Продолжительность:"  Style="{DynamicResource MainTextTray}"/>
+                </StackPanel>
+
+                <Separator  Grid.Row="3"  Grid.ColumnSpan="3" Style="{DynamicResource SeparatorTray}"/>
+                
+                <StackPanel  Grid.Row="4">
+                    <TextBlock Text="Сегодня:" Style="{DynamicResource TitleTray}" />
+                    <TextBlock Text="Uploaded:"  Style="{DynamicResource MainTextTray}" />
+                    <TextBlock Text="Download:"  Style="{DynamicResource MainTextTray}" />
+                </StackPanel>
+
+                <Separator Grid.Row="5"  Grid.ColumnSpan="3" Style="{DynamicResource SeparatorTray}"/>
+                <StackPanel  Grid.Row="6">
+                    <TextBlock Text="Всего:" Style="{DynamicResource TitleTray}" />
+                    <TextBlock Text="Uploaded:" Style="{DynamicResource MainTextTray}" />
+                    <TextBlock Text="Download:"  Style="{DynamicResource MainTextTray}" />
+                </StackPanel>
+                <Separator Grid.Row="7"  Grid.ColumnSpan="3" Style="{DynamicResource SeparatorTray}"/>
+                <TextBlock Grid.Row="8" Grid.ColumnSpan="3" 
+           Style="{DynamicResource TitleTray}" 
+           TextWrapping="Wrap" 
+           TextAlignment="Center" 
+           HorizontalAlignment="Center">
+    <Run Text="Сетевой интерфейс: " />
+    <Run Text="{Binding ActiveNetworkInterface, Mode=OneWay}"/>
+                </TextBlock>
+                <Border Grid.Row="9" Grid.ColumnSpan="3" Padding="3" CornerRadius="10" Background="{Binding ActiveBackground}">
+                    <TextBlock Text="{Binding ActiveString}" Foreground="{Binding ActiveForeground }" TextAlignment="Center" FontWeight="Bold"/>
+                </Border>
+
+
+                <StackPanel  Grid.Row="2" Grid.Column="2">
+                    <TextBlock Text=" " Style="{DynamicResource TitleTray}"/>
+                    <DockPanel LastChildFill="False">
+
+                        <TextBlock Text="{Binding SessionUploadType}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                        <TextBlock Text="{Binding SessionUpload}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                    </DockPanel>
+                    <DockPanel LastChildFill="False">
+                        <TextBlock Text="{Binding SessionDownloadType}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                        <TextBlock Text="{Binding SessionDownload}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                    </DockPanel>
+                    <DockPanel LastChildFill="False">
+
+                        <TextBlock Text="{Binding Uptime}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel  Grid.Row="4" Grid.Column="2">
+                    <TextBlock Text=" " Style="{DynamicResource TitleTray}"/>
+                    <DockPanel LastChildFill="False">
+                        <TextBlock Text="{Binding TodayUploadType}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                        <TextBlock Text="{Binding TodayUpload}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                    </DockPanel>
+                    <DockPanel LastChildFill="False">
+                        <TextBlock Text="{Binding TodayDownloadType}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                        <TextBlock Text="{Binding TodayDownload}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                    </DockPanel>
+                   
+                </StackPanel>
+                <StackPanel  Grid.Row="6" Grid.Column="2">
+                    <TextBlock Text=" " Style="{DynamicResource TitleTray}"/>
+                    <DockPanel LastChildFill="False">
+                        <TextBlock Text="{Binding TotalUploadType}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                        <TextBlock Text="{Binding TotalUpload}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                    </DockPanel>
+                    <DockPanel LastChildFill="False">
+                        <TextBlock Text="{Binding TotalDownloadType}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                        <TextBlock Text="{Binding TotalDownload}" DockPanel.Dock="Right" Style="{DynamicResource Statistic}"/>
+                    </DockPanel>
+
+                </StackPanel>
+
+
+
+            </Grid>
+        </StackPanel>
+    </Border>
+   
+</UserControl>
